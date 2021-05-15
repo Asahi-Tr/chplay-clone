@@ -32,10 +32,13 @@ const useStyle = makeStyles({
   },
   homeLink: {
     display: 'inline-block',
+    padding: '10px 35px',
+    flex: '0 0  270px',
     height: '100%',
-    padding: '10px 30px',
     '& img': {
-      height: '100%'
+      height: '100%',
+      width: '100%',
+      objectFit: 'contain',
     }
   },
   avatar: {
@@ -84,7 +87,7 @@ const Header = () => {
         <div className={classes.root} >
           <div className={classes.left}>
             <Link className={classes.homeLink} to="/">
-              <img src="https://www.gstatic.com/android/market_images/web/play_prism_hlock_2x.png" alt="" />
+              <img className={classes.homeLink.chplayImg} src="https://www.gstatic.com/android/market_images/web/play_prism_hlock_2x.png" alt="" />
             </Link>
             <SearchBar />
           </div>

@@ -2,7 +2,7 @@ import React from 'react';
 
 import Header from './components/Header';
 
-import './reset.css';
+import './base.css';
 
 function App() {
   return (
