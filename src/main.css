@@ -1,3 +1,12 @@
+/* button */
+.btn {
+  padding: 8px 16px;
+  background-color: var(--primary);
+  border-radius: 4px;
+  color: white;
+  font-weight: 500;
+}
+
 /* components/commons/SearchBar */
 .search-bar {
   width: 100%;
@@ -22,6 +31,7 @@
 
 .header {
   width: 100%;
+  min-width: 1050px;
   height: 60px;
   display: flex;
   justify-content: space-between;
@@ -132,7 +142,71 @@
 /* component/Container */
 
 .container {
-  background-color: white;
+  min-width: 500px;
+  overflow: hidden;
+  /* background-color: white; */
   margin: 48px 48px 0 calc(var(--sidebar-width) + 48px);
-  height: 100vh;
+}
+
+/* components/commons/Card */
+.card {
+  box-shadow: 0px 1px 3px 0px #999;
+  margin: 0 4px;
+  flex-basis: 174px;
+}
+
+.card__img {
+  position: relative;;
+  padding: 12px;
+}
+
+.card__img img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
+.card__img div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: 0.3s;
+  background-color: #000;
+  z-index: 10;
+}
+
+.card__img div:hover {
+  opacity: 0.3;
+}
+
+.card__info {
+  display: block;
+  padding: 8px;
+}
+
+/* component/ListCard */
+.list-card {
+  padding-bottom: 16px;
+  width: 1052px;
+}
+
+.list-card__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 48px;
+}
+
+.list-card__head p {
+  font-size: 2.4rem;
+  font-weight: 500;
+  color: var(--gray);
+  padding-left: 4px;
+}
+
+.list-card__content {
+  display: flex;
 }
