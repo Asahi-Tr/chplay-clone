@@ -127,12 +127,12 @@
 
 .nav-bar__sidebar .nav-link:hover {
   background-color: #ccc;
-};
+}
 
 /* component/Container */
 
 .container {
-  background-color: red;
-  width: 1000px;
-  height: 100px;
+  background-color: white;
+  margin: 48px 48px 0 calc(var(--sidebar-width) + 48px);
+  height: 100vh;
 }
