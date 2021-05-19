@@ -27,6 +27,42 @@
   color: white;
 }
 
+/* components/commons/Dropdown */
+
+.dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  color: #333;
+}
+
+.dropdown:hover {
+  background-color: #eee;
+}
+
+.dropdown:hover .dropdown__list {
+  display: block;
+}
+
+.dropdown__title {
+  margin: auto;
+  font-size: 2rem;
+  margin-right: 8px;
+}
+
+.dropdown__list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  padding: 16px 0px;
+  background-color: #fff;
+  display: none;
+  border-radius: 4px;
+  box-shadow: 0px 1px 10px 0px #aaa;
+}
+
 /* components/Header */
 
 .header {
@@ -86,6 +122,7 @@
   display: flex;
   height: 50px;
   width: 100%;
+  min-width: 1050px;
   box-shadow: 0px 2px 5px 0px #ccc;
   position: relative;
   background-color: #fff;
@@ -101,6 +138,7 @@
   display: block;
   width: var(--sidebar-width);
   padding: 10px 0;
+  margin-right: 52px;
   background-color: var(--primary);
   color: white;
   font-size: 2rem;
@@ -124,6 +162,8 @@
 
 .nav-bar__topnav .nav-item--active {
   border-bottom: 3px solid var(--primary);
+  padding-bottom: 10px;
+  font-weight: 600;
 }
 
 .nav-bar__sidebar {
@@ -145,7 +185,7 @@
   border-bottom: 1px solid #ccc;
 }
 
-.nav-bar__sidebar .nav-link {
+.nav-link {
   width: 100%;
   display: block;
   font-size: 2rem;
@@ -154,28 +194,26 @@
   padding: 12px 0 12px 56px;
 }
 
-.nav-bar__sidebar .nav-link--small {
+.nav-link--small {
   font-size: 1.6rem;
   font-weight: 400;
   padding: 4px 0 4px 28px;
 }
 
-.nav-bar__sidebar .nav-link--active {
+.nav-link--active {
   color: var(--primary) !important;
 }
 
-.nav-bar__sidebar .nav-link:hover {
+.nav-link:hover {
   background-color: #ccc;
 }
 
 /* component/Container */
 
 .container {
-  min-width: 500px;
-  overflow: hidden;
   /* background-color: white; */
   padding-top: 48px;
-  margin: 0 48px 0 calc(var(--sidebar-width) + 48px);
+  margin-left: calc(var(--sidebar-width) + 48px);
 }
 
 .container--pdt {
@@ -189,6 +227,7 @@
   flex-basis: 174px;
   overflow-x: hidden;
   border-radius: 4px;
+  background-color: #fff;
 }
 
 .card__img {
@@ -230,7 +269,8 @@
 /* component/ListCard */
 .list-card {
   padding-bottom: 16px;
-  width: 1052px;
+  min-width: 536px;
+  display: table;
 }
 
 .list-card__head {
@@ -238,6 +278,7 @@
   justify-content: space-between;
   align-items: center;
   height: 48px;
+  max-width: 1084px;
 }
 
 .list-card__head p {
@@ -249,4 +290,6 @@
 
 .list-card__content {
   display: flex;
+  min-width: 1092px;
+  overflow-x: hidden;
 }

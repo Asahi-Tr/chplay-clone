@@ -10,7 +10,7 @@ const Card = (props) => {
     <Router>
       <div className='card'>
         <Link to='/' className="card__img">
-          <img src="https://picsum.photos/150" alt="" />
+          <img src="https://play-lh.googleusercontent.com/KdusfMTk111eryfavWx2uMNJrpXBIstYk3OIPiRXlSATBn1ISrWuQjEcLnl23gGOAxI=s180-rw" alt="" />
           <div></div>
         </Link>
         <div className="card__info">

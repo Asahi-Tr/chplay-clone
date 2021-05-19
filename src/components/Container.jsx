@@ -8,6 +8,11 @@ const Container = () => {
       <ListCard />
       <ListCard />
       <ListCard />
+      <ListCard />
+      <ListCard />
+      <ListCard />
+      <ListCard />
+
     </div>
   );
 }
