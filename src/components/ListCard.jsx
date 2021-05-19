@@ -3,7 +3,7 @@ import React from 'react';
 import Card from './commons/Card';
 
 const ListCard = (props) => {
-  const { listItem } = props;
+  // const { listItem } = props;
 
   return (
     <div className='list-card'>

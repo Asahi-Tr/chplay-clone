@@ -9,13 +9,13 @@ const Card = (props) => {
   return (
     <Router>
       <div className='card'>
-        <Link className="card__img">
-          <img src="https://via.placeholder.com/150" alt="" />
+        <Link to='/' className="card__img">
+          <img src="https://picsum.photos/150" alt="" />
           <div></div>
         </Link>
         <div className="card__info">
-          <Link><strong>Name</strong></Link>
-          <Link>Developer</Link>
+          <Link to='/'><strong>Name</strong></Link>
+          <Link to='/'>Developer</Link>
         </div>
 
         <div className="card__rate"></div>

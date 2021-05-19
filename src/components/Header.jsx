@@ -1,10 +1,40 @@
 import React from 'react';
 import {
   BrowserRouter as Router,
-  Link
+  Link,
+  useLocation
 } from "react-router-dom";
 
 import SearchBar from './commons/SearchBar';
+
+function NavLink({ to, children, className, actClass }) {
+  let location = useLocation();
+  className = location.pathname === to ? className + ` ${actClass}` : className;
+  return (
+    <Link to={to} className={className}>{children}</Link>
+  )
+}
+
+const navList = {
+  topNav: [
+    { title: 'Editor Choice', to: '/a' },
+    { title: 'Editor Choice', to: '/b' },
+    { title: 'Editor Choice', to: '/c' },
+    { title: 'Editor Choice', to: '/d' },
+  ],
+  sideBarNav: [
+    { title: 'Apps', to: '/apps' },
+    { title: 'Game', to: '/games' },
+    { title: 'Installeds', to: '/installed' },
+  ],
+  sideBarSubNav: [
+    { title: 'Account', to: '/account' },
+    { title: 'Payment methods', to: '/payment-methods' },
+    { title: 'My subscriptions', to: '/subcriptions' },
+    { title: 'Redeem', to: '/redeem' },
+    { title: 'My wishlist', to: '/wishlist' },
+  ]
+}
 
 const Header = () => {
 
@@ -33,22 +63,23 @@ const Header = () => {
           <Link to='/store' className='nav-bar__head'>
             {'Apps & Games'}
           </Link>
+          <nav className='nav-bar__topnav'>
+            {navList.topNav.map(({ to, title }) =>
+              <NavLink to={to} className='nav-item' actClass='nav-item--active'>{title}</NavLink>)
+            }
+          </nav>
 
           <div className='nav-bar__sidebar'>
             <nav className='sidebar-nav'>
-              <Link className='nav-link' to='/'>Apps</Link>
-              <Link className='nav-link' to='/'>Games</Link>
-              <Link className='nav-link' to='/'>Installeds</Link>
+              {navList.sideBarNav.map(({ to, title }) =>
+                <NavLink to={to} className='nav-link' actClass='nav-link--active'>{title}</NavLink>)
+              }
             </nav>
 
             <nav className='sidebar-subnav'>
-              <Link className='nav-link nav-link--small' to='/'>Account</Link>
-              <Link className='nav-link nav-link--small' to='/'>Payment methods</Link>
-              <Link className='nav-link nav-link--small' to='/'>My subscribtions</Link>
-              <Link className='nav-link nav-link--small' to='/'>Redeem</Link>
-              <Link className='nav-link nav-link--small' to='/'>My wishlist</Link>
-              <Link className='nav-link nav-link--small' to='/'>My play activity</Link>
-              <Link className='nav-link nav-link--small' to='/'>Parent Guide</Link>
+              {navList.sideBarSubNav.map(({ to, title }) =>
+                <NavLink to={to} className='nav-link nav-link--small' actClass='nav-link--active'>{title}</NavLink>)
+              }
             </nav>
           </div>
         </div>

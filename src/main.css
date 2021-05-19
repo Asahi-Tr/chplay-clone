@@ -83,11 +83,18 @@
 
 /* nav-bar */
 .nav-bar {
+  display: flex;
   height: 50px;
   width: 100%;
   box-shadow: 0px 2px 5px 0px #ccc;
   position: relative;
   background-color: #fff;
+  z-index: 10;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
 }
 
 .nav-bar__head {
@@ -99,6 +106,24 @@
   font-size: 2rem;
   text-align: center;
   font-weight: bold;
+}
+
+.nav-bar__topnav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-bar__topnav .nav-item {
+  padding: 13px 12px;
+  font-size: 1.6rem;
+}
+
+.nav-bar__topnav .nav-item:hover {
+  background-color: #eee;
+}
+
+.nav-bar__topnav .nav-item--active {
+  border-bottom: 3px solid var(--primary);
 }
 
 .nav-bar__sidebar {
@@ -135,6 +160,10 @@
   padding: 4px 0 4px 28px;
 }
 
+.nav-bar__sidebar .nav-link--active {
+  color: var(--primary) !important;
+}
+
 .nav-bar__sidebar .nav-link:hover {
   background-color: #ccc;
 }
@@ -145,14 +174,21 @@
   min-width: 500px;
   overflow: hidden;
   /* background-color: white; */
-  margin: 48px 48px 0 calc(var(--sidebar-width) + 48px);
+  padding-top: 48px;
+  margin: 0 48px 0 calc(var(--sidebar-width) + 48px);
+}
+
+.container--pdt {
+  padding-top: 96px;
 }
 
 /* components/commons/Card */
 .card {
   box-shadow: 0px 1px 3px 0px #999;
-  margin: 0 4px;
+  margin: 8px 4px;
   flex-basis: 174px;
+  overflow-x: hidden;
+  border-radius: 4px;
 }
 
 .card__img {
@@ -175,7 +211,7 @@
   opacity: 0;
   transition: 0.3s;
   background-color: #000;
-  z-index: 10;
+  z-index: 5;
 }
 
 .card__img div:hover {
@@ -184,7 +220,11 @@
 
 .card__info {
   display: block;
-  padding: 8px;
+  padding: 8px 12px;
+}
+
+.card__info a:hover{
+  text-decoration: underline;
 }
 
 /* component/ListCard */
