@@ -18,6 +18,12 @@ const ListCard = (props) => {
         <Card></Card>
         <Card></Card>
         <Card></Card>
+        <Card></Card>
+        <Card></Card>
+        <Card></Card>
+        <Card></Card>
+        <Card></Card>
+
       </div>
     </div>
   );

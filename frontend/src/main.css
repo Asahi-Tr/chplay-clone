@@ -278,7 +278,6 @@
   justify-content: space-between;
   align-items: center;
   height: 48px;
-  max-width: 1084px;
 }
 
 .list-card__head p {
@@ -290,6 +289,6 @@
 
 .list-card__content {
   display: flex;
-  min-width: 1092px;
-  overflow-x: hidden;
+  flex-wrap: wrap;
+
 }
