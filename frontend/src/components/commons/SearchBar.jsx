@@ -1,18 +1,12 @@
 import React from 'react';
 import {
   useHistory,
-  useLocation
 } from 'react-router-dom';
 
 
 const SearchBar = (props) => {
   let history = useHistory();
-  let location = useLocation();
   let [searchText, setSearchText] = React.useState('')
-
-  React.useEffect(() => {
-    console.log(location)
-  }, [location])
 
   function handleSubmit(e) {
     e.preventDefault();

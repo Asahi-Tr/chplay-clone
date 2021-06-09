@@ -1,27 +1,28 @@
 import React from 'react';
 
 import {
-  BrowserRouter as Router,
   Link
 } from "react-router-dom";
 
-const Card = (props) => {
+import RatingStar from './RatingStar';
+
+const Card = ({ appId, developerId, title, icon, developer, score }) => {
   return (
-    <Router>
-      <div className='card'>
-        <Link to='/' className="card__img">
-          <img src="https://play-lh.googleusercontent.com/KdusfMTk111eryfavWx2uMNJrpXBIstYk3OIPiRXlSATBn1ISrWuQjEcLnl23gGOAxI=s180-rw" alt="" />
-          <div></div>
-        </Link>
-        <div className="card__info">
-          <Link to='/'><strong>Name</strong></Link>
-          <Link to='/'>Developer</Link>
-        </div>
-
-        <div className="card__rate"></div>
-
+    <div className='card'>
+      <Link to={`/details/${appId}`} className="card__img">
+        <img src={icon} alt="" />
+        <div></div>
+      </Link>
+      <div className="card__info">
+        <Link to={`/details/${appId}`} ><strong>{title}</strong></Link>
+        <Link to={`/dev/${developerId}`}>{developer}</Link>
       </div>
-    </Router>
+
+      <div className="card__rate">
+        <RatingStar value={score} />
+      </div>
+
+    </div>
   );
 }
 
