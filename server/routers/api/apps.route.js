@@ -39,12 +39,6 @@ let apps = {
   // WEATHER: "WEATHER",
 }
 
-
-
-let randomKeysObj = (obj, num) => {
-
-}
-
 router.get("/home", async (req, res) => {
   let data = [];
   let promiseList = [];
