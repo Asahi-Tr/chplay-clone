@@ -32,7 +32,7 @@ router.get("/home", async (req, res) => {
       num: 8
     });
     promiseList.push(promise);
-    data.push({ title: category.replace(/_/g, " ") });
+    data.push({ title: category.replace(/_/g, " "), seemoreUrl: "/games/category/" + category });
   }
 
   await Promise.all(promiseList).then(res => {

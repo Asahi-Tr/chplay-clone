@@ -36,7 +36,7 @@ const Container = () => {
           </div>
         </Route>
 
-        <Route path='/details/:appid'>
+        <Route exact path='/details/:appid'>
           <div className='container'>
             <Detail />
           </div>

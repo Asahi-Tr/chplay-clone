@@ -1,3 +1,18 @@
+/* custom scrollbar  */
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #999;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #666; 
+}
+
 /* commons/RatingStar */
 
 .ratingstar {
@@ -448,6 +463,7 @@
   overflow-x: auto;
   height: 380px;
   margin: 64px 0;
+  padding-bottom: 4px;
 }
 
 .detail__screenshots img {

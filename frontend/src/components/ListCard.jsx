@@ -2,7 +2,9 @@ import React from 'react';
 
 import Card from './commons/Card';
 
-const ListCard = ({ title, listItem, oneCategory }) => {
+import { Link } from 'react-router-dom';
+
+const ListCard = ({ title, listItem, oneCategory, seemoreUrl }) => {
   let contentStyle = {
     overflowX: !oneCategory ? "auto" : "unset",
     flexWrap: oneCategory ? "wrap" : "nowrap"
@@ -12,7 +14,11 @@ const ListCard = ({ title, listItem, oneCategory }) => {
     <div className='list-card'>
       <div className='list-card__head'>
         <p>{title}</p>
-        {!oneCategory && <button className='btn'>See more</button>}
+        {!oneCategory &&
+          <Link to={seemoreUrl}>
+            <button className='btn'>See more</button>
+          </Link>
+        }
       </div>
       <div className="list-card__content" style={contentStyle}>
         {listItem && listItem.map((item) => <Card
