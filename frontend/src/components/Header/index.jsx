@@ -7,12 +7,12 @@ import {
   useLocation
 } from "react-router-dom";
 
-import SearchBar from './commons/SearchBar';
-import Dropdown from './commons/Dropdown';
-import NavLink from './commons/NavLink';
+import SearchBar from './SearchBar';
+import Dropdown from './Dropdown';
+import NavLink from './NavLink';
 
-import navList from '../constant/navList';
-import dropdown from '../constant/dropdown';
+import navList from '../../constant/navList';
+import dropdown from '../../constant/dropdown';
 
 const Header = () => {
 

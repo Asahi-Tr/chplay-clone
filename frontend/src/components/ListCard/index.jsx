@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Card from './commons/Card';
+import Card from './Card';
 
 import { Link } from 'react-router-dom';
 

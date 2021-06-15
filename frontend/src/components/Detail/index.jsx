@@ -5,11 +5,11 @@ import {
   Link
 } from 'react-router-dom';
 
-import editorChoiceImg from '../assets/img/editor_choice.webp';
-import personImg from '../assets/img/person.png';
+import editorChoiceImg from '../../assets/img/editor_choice.webp';
+import personImg from '../../assets/img/person.png';
 
-import RatingStar from './commons/RatingStar';
-import Overlay from './commons/Overlay';
+import RatingStar from '../commons/RatingStar';
+import Overlay from '../commons/Overlay';
 
 const Detail = () => {
   let { appid } = useParams();

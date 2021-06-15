@@ -4,7 +4,7 @@ import {
   Link
 } from "react-router-dom";
 
-import RatingStar from './RatingStar';
+import RatingStar from '../commons/RatingStar';
 
 const Card = ({ appId, developerId, title, icon, developer, score }) => {
   return (
