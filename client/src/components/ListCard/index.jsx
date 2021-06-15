@@ -21,11 +21,7 @@ const ListCard = ({ title, listItem, oneCategory, seemoreUrl }) => {
         }
       </div>
       <div className="list-card__content" style={contentStyle}>
-        {listItem && listItem.map((item) => <Card
-          key={item.appId}
-          {...item}
-        />)}
-
+        {listItem && listItem.map((item) => <Card key={item.appId} {...item} />)}
       </div>
     </div>
   );

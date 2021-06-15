@@ -10,8 +10,8 @@ import Dropdown from './Dropdown';
 import NavLink from './NavLink';
 import TopNav from './TopNav';
 
-import navList from '../../constant/navList';
-import dropdown from '../../constant/dropdown';
+import { SIDEBAR_NAV_LIST, SIDEBAR_SUBNAV_LIST } from '../../constant/navList';
+import { GAME_CATEGORIES, APP_CATEGORIES } from '../../constant/dropdown';
 
 const GGPlayLogoUrl = "https://www.gstatic.com/android/market_images/web/play_prism_hlock_2x.png";
 const avatarPlaceholderUrl = "https://avatars.dicebear.com/api/bottts/0201.svg";
@@ -38,6 +38,10 @@ const Header = () => {
         </div>
       </div>
 
+      <Route exact path="/">
+        <Redirect to="/apps/home" />
+      </Route>
+
       <div className='nav-bar'>
         <Link to='/store' className='nav-bar__head'>
           {'Apps & Games'}
@@ -48,7 +52,7 @@ const Header = () => {
             <Route exact path="/apps">
               <Redirect to="/apps/home" />
             </Route>
-            <Dropdown listItem={dropdown.appCategories} />
+            <Dropdown listItem={APP_CATEGORIES} />
             <TopNav prefix="/apps" />
           </Route>
 
@@ -56,7 +60,7 @@ const Header = () => {
             <Route exact path="/games">
               <Redirect to="/games/home" />
             </Route>
-            <Dropdown listItem={dropdown.gameCategories} />
+            <Dropdown listItem={GAME_CATEGORIES} />
             <TopNav prefix="/games" />
 
           </Route>
@@ -64,13 +68,13 @@ const Header = () => {
 
         <div className='nav-bar__sidebar'>
           <nav className='sidebar-nav'>
-            {navList.sideBarNav.map(({ to, title }, i) =>
+            {SIDEBAR_NAV_LIST.map(({ to, title }, i) =>
               <NavLink key={i} to={to} className='nav-link' actClass='nav-link--active'>{title}</NavLink>)
             }
           </nav>
 
           <nav className='sidebar-subnav'>
-            {navList.sideBarSubNav.map(({ to, title }, i) =>
+            {SIDEBAR_SUBNAV_LIST.map(({ to, title }, i) =>
               <NavLink key={i} to={to} className='nav-link nav-link--small' actClass='nav-link--active'>{title}</NavLink>)
             }
           </nav>
